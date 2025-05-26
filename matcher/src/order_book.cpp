@@ -10,9 +10,9 @@ void OrderBook::addOrder(const Order& order) {
 }
 
 void OrderBook::processOrder(Order& order) {
-    if (order.side == Side::BUY) {
-        order.match(sellOrders);  // Match buy order against sell book
+    if (order.side == Side::SELL) {
+        order.match(buyOrders); // Match buy order against sell book
     } else {
-        order.match(buyOrders);   // Match sell order against buy book
+        order.match(sellOrders);    // Match sell order against buy book
     }
 }
